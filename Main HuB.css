@@ -101,11 +101,11 @@
   
     max-width:var(--nav-width);
     display:flex; align-items:center; justify-content:space-between; gap:20px;
-    background: linear-gradient(180deg, rgba(71,0,66,0.92), rgba(72,0,0,0.72));
+    background: linear-gradient(180deg, rgba(71,0,66,0.92), rgba(72, 0, 0, 0.307));
     padding:12px 18px;
     border-radius:12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(1px);
     transition: transform .35s cubic-bezier(.2,.9,.2,1), opacity .25s;
     position:relative;
     overflow:visible;
@@ -617,6 +617,7 @@
 .what-we-do-padding{
   padding:20px;
 }
+
 
 
 
