@@ -190,28 +190,31 @@
         </div>
 
         <!-- Card 12 -->
-           <div class="card" data-src="pr12.png" data-link="https://youtu.be/J8e6R2RBhF4?si=965HtsYukPEfvak3" tabindex="0" aria-label="Open Happy 18th Wenuri">
+        <div class="card" data-src="pr12.png" data-link="https://youtu.be/J8e6R2RBhF4?si=965HtsYukPEfvak3" tabindex="0" aria-label="Open Happy 11th Pulmi">
           <div class="img" style="background-image:url('pr12.png')" role="img" aria-hidden="true"></div>
           <div class="overlay">
-            <h3>Pulmi's 11th</h3>
+            <h3>Happy 11th Pulmi</h3>
             <p>Official Videography Partner</p>
           </div>
         </div>
 
         <!-- Card 13 -->
-         <div class="card" data-src="pr13.png" data-link="https://youtu.be/J8e6R2RBhF4?si=965HtsYukPEfvak3" tabindex="0" aria-label="Open Happy 18th Wenuri">
+        <div class="card" data-src="pr13.png"  data-link="https://youtu.be/saszroVfie4?si=77P_4IkXzG1k6mYt" tabindex="0" aria-label="Open Saiyaare Cover Music Video">
           <div class="img" style="background-image:url('pr13.png')" role="img" aria-hidden="true"></div>
           <div class="overlay">
-            <h3>Saiyaara Cover Music Video</h3>
+            <h3>Saiyaare Cover Music Video</h3>
             <p>Official Videography Partner</p>
           </div>
         </div>
+
        <!-- Lightbox Modal -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true1" aria-hidden="true1">
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true1" aria-hidden="true1"> 
     <div class="inner" role="document">
       <button class="close" id="lbClose" aria-label="Close">✕</button>
       <img id="lbImg" src="" alt="Portfolio image">
       <div class="meta">
+         
+
         <div class="muted" id="lbCaption">Project</div>
         <div><a class="cta1" id="lbLink" href="https://www.facebook.com/share/p/1BaTiQ6Z8C/" target="_blank" rel="noopener noreferrer">View</a></div>
         
@@ -231,7 +234,7 @@
       <h2 class="center mb-8">Follow us</h2>
       <div class="social-row">
         <a class="social-btn3" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a class="social-btn3" href="https://www.instagram.com/horizone_lk" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="social-btn3" href="https://www.instagram.com/studiohorizone_lk?igsh=MTNjOWF1MWJibXFxeQ==" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a class="social-btn3" href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
         <a class="social-btn3" href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">TikTok</a>
       </div>
@@ -241,19 +244,23 @@
     <section id="contact" class="fade-section">
       <h2 class="center mb-8">Contact Us</h2>
       <div class="contacts">
-        <div class="contact-card">
+
+        <a class="contact-card" href="tel:+94772947108" target="_blank" rel="noopener noreferrer">
           <h3>Phone</h3>
-          <p class="muted">+94 77 294 7108</p>
-        </div>
-        <div class="contact-card">
+          <p class="muted" >+94 77 294 7108</p>
+        </a>
+
+        <a class="contact-card" href="mailtp:horizonelkstudios@gmail.com" target="_blank" rel="noopener noreferrer">
           <h3>Email</h3>
           <p class="muted">hello@horizonelkstudios.com</p>
-        </div>
-        <div class="contact-card">
+        </a>
+
+        <a class="contact-card" href="https://www.instagram.com/studiohorizone_lk?igsh=MTNjOWF1MWJibXFxeQ==" target="_blank" rel="noopener noreferrer">
           <h3>Instagram</h3>
           <p class="muted">@studiohorizonelk</p>
-        </div>
+        </a>
       </div>
+
     </section>
 
     <footer>
@@ -370,6 +377,7 @@ function openLightbox(src, title, link){
 }
 
 cards.forEach(c => {
+  
   c.addEventListener('click', () => {
     openLightbox(
       c.dataset.src,
@@ -430,6 +438,7 @@ cards.forEach(c => {
 
   // 3D tilt on cards
 cards.forEach(card => {
+  
   card.addEventListener("mousemove", e => {
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -523,6 +532,9 @@ heroTitle.innerHTML = heroTitle.textContent
 window.addEventListener("scroll", () => {
   const cards = document.querySelectorAll(".card");
   cards.forEach(c => {
+
+
+    
     const rect = c.getBoundingClientRect();
     const offset = (window.innerHeight - rect.top) / window.innerHeight;
     const scale = 0.95 + offset * 0.05;
@@ -531,6 +543,29 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+c.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+
+        const rect = c.getBoundingClientRect();
+        const scrollY = window.scrollY;
+        const scrollX = window.scrollX;
+
+        const x = rect.left + scrollX;
+        const y = rect.top + scrollY;
+
+        const inner = lightbox.querySelector('.inner');
+        inner.style.left = x + "px";
+        inner.style.top = y + "px";
+
+        openLightbox(
+          c.dataset.src,
+          c.querySelector('h3').textContent,
+          c.dataset.link
+        );
+    }
+});
+
 
 // ★ FLOATING PARTICLES BEHIND HERO
 const hero = document.querySelector(".hero");
@@ -548,5 +583,3 @@ for (let i = 0; i < 40; i++) {
   </script>
 </body>
 </html>
-
-
